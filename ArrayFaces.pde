@@ -1,3 +1,8 @@
+/*Elena Chavez
+2/5,25
+arrays */
+
+
 int sound;
 int total;
 String[] albums = { "evermore", "Hit Me Hard and Soft", "reputation", "Pitbull's Greatest Hits", "Guts", "Midnights", "The Secret of Us" };
@@ -9,27 +14,27 @@ int pGH = 0;
 int midnights = 0;
 int guts = 0;
 int tSoU = 0;
-PImage folkloresSister, billie, rep,pitbull, olivia,maroon, gracie;
+PImage folkloresSister, billie, rep, pitbull, olivia, maroon, gracie;
 
 
 void setup() {
   size(750, 500);
   noLoop();
-    folkloresSister= loadImage("evermore.jpg");
-    billie = loadImage("billie.png");
-    rep = loadImage("reputation.png");
-    pitbull = loadImage("mrWorldWide.png");
-    olivia = loadImage("guts.png");
-    maroon = loadImage("Midnights.png");
-    gracie = loadImage("gracie.png");
-    
+  folkloresSister= loadImage("evermore.jpg");
+  billie = loadImage("billie.png");
+  rep = loadImage("reputation.png");
+  pitbull = loadImage("mrWorldWide.png");
+  olivia = loadImage("guts.png");
+  maroon = loadImage("Midnights.png");
+  gracie = loadImage("gracie.png");
 
-    //// Debugging: Check if images loaded
-    ////if (f1 == null) println("Error loading 1.png");
-    ////if (f2 == null) println("Error loading 2.png");
-    ////if (f3 == null) println("Error loading 3.png");
-    ////if (f4 == null) println("Error loading 4.png");
-    ////if (f5 == null) println("Error loading 5.png");
+
+  //// Debugging: Check if images loaded
+  ////if (f1 == null) println("Error loading 1.png");
+  ////if (f2 == null) println("Error loading 2.png");
+  ////if (f3 == null) println("Error loading 3.png");
+  ////if (f4 == null) println("Error loading 4.png");
+  ////if (f5 == null) println("Error loading 5.png");
 }
 
 void draw() {
@@ -86,7 +91,6 @@ void draw() {
   if (albumPlaying.equals(albums[0])) {
     evermore += 1;
     //image function
-    
   } else if (albumPlaying.equals(albums[1])) {
     hMhAs += 1;
   } else if (albumPlaying.equals(albums[2])) {
@@ -114,6 +118,37 @@ void draw() {
   text("Guts: " + guts, 550, 200);
   text("The secret of us: " + tSoU, 600, 230);
   text("Evermore: " + evermore, 575, 260);
+  PImage img = null;
+  
+  
+  if (albumIndex==0)
+  {
+    image(folkloresSister, 500, 280, 180, 180);
+  }
+   if (albumIndex==1)
+  {
+    image(billie, 500, 280, 180, 180);
+  }
+    if (albumIndex==2)
+  {
+    image(rep, 500, 280, 180, 180);
+  }
+   if (albumIndex==3)
+  {
+    image(pitbull, 500, 280, 180, 180);
+  }
+   if (albumIndex==4)
+  {
+    image(olivia, 500, 280, 180, 180);
+  }
+  if (albumIndex==5)
+  {
+    image(maroon, 500, 280, 180, 180);
+  }
+  if(albumIndex==6)
+  {
+    image(gracie,500,280,180,180);
+  }
 }
 
 void mousePressed() {
@@ -147,21 +182,9 @@ class Die {
     fill(random(50, 250), 116, random(100, 250));
     ellipse(x, y, 60, 60);
     fill(225);
-   textSize(13);
+    textSize(13);
     textAlign(CENTER);
     text("volume " + sound, x, y);
-    PImage img = null;
-        if (albumPlaying.equals(albums[1])) img = evermore;
-        else if (albumPlaying.equals(albums[2])) img = billie;
-        //else if (value == 3) img = f3;
-        //else if (value == 4) img = f4;
-        //else if (value == 5) img = f5;
-        
-        if (img != null) {
-            image(img, x, y);
-    }
-
+    
   }
 }
-
-
